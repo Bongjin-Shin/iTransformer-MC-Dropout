@@ -44,4 +44,33 @@ CSV 데이터 로드
 
 
 # MC_Dropout_scatter_v9.py
-
+```
+AUC-ROC CSV 로드 (variance_v3.py 산출물)
+    │
+    ▼
+데이터셋별 순회
+    │   각 데이터셋에서:
+    │     ┌──────────────────────────────────────────────────────┐
+    │     │ 1. 제외 family 필터링 (MSL, SMAP, TAO 등)            │
+    │     │ 2. AUC-ROC 유효성 검사 (nan, 최솟값 필터)             │
+    │     │ 3. pred.npy / true.npy 로드                          │
+    │     │ 4. 원본 CSV 라벨로 정상 윈도우만 필터링                 │
+    │     │    - lookback 구간 전체 label=0                       │
+    │     │    - prediction 구간 전체 label=0                     │
+    │     │ 5. 정상 윈도우만으로 채널별 MAE 또는 MSE 계산           │
+    │     └──────────────────────────────────────────────────────┘
+    │
+    ▼
+records 리스트 수집 완료
+    │
+    ├───────────────────────────┐
+    ▼                           ▼
+전체 Scatter Plot            Family별 Scatter Plot
+ (Rank + Raw 2패널)           (family별 subplot + 회귀선)
+    │                           │
+    ├──── X_UPPER_CLIP 적용 ─────┤
+    │     (outlier 제외 버전)     │
+    ▼                           ▼
+PNG / SVG / PDF 저장         PNG / SVG / PDF 저장
+```
+이때 X_UPPER_CLIP = 10으로써, outlier들을 때문에 나머지 데이터셋들의 분포 정도를 확인하기 어려워 이들을 제거했을 때 나머지 데이터셋들이 어떤 분포 형태가 띄는지 확인하기 위해서 추가한 로직입니다.
