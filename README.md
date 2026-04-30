@@ -1,17 +1,18 @@
 # iTransformer-MC-Dropout
 iTransformer + MC Dropout + TSB-AD 조합에 대해 실험한 Repository입니다.
 
-#MC_Dropout_time-series_variance_v3.py 전체 흐름도 \
-CSV 데이터 로드 \
-    │ \
-    ▼ \
+#MC_Dropout_time-series_variance_v3.py 전체 흐름도
+```
+CSV 데이터 로드 
+    │ 
+    ▼ 
 전처리 (StandardScaler로 정규화)
-    │
-    ▼
+    │ 
+    ▼ 
 학습된 iTransformer 체크포인트 로드
-    │
-    ▼
-테스트 구간을 슬라이딩 윈도우로 순회
+    │ 
+    ▼ 
+테스트 구간을 슬라이딩 윈도우로 순회 
     │   각 윈도우 위치에서:
     │     ┌─────────────────────────────────────────────────────┐
     │     │ 1. lookback 길이의 입력 구성                         │
@@ -29,3 +30,4 @@ CSV 데이터 로드 \
     │
     ▼
 결과를 CSV에 append
+```
