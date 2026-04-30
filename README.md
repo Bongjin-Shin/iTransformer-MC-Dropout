@@ -1,5 +1,5 @@
 # iTransformer-MC-Dropout
-iTransformer + MC Dropout + TSB-AD 조합에 대해 실험한 Repository입니다.
+- iTransformer + MC Dropout + TSB-AD 조합에 대해 실험한 Repository입니다.
 
 전체적인 간략한 흐름은 다음과 같습니다.
 ```
