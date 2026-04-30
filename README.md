@@ -1,7 +1,17 @@
 # iTransformer-MC-Dropout
 iTransformer + MC Dropout + TSB-AD 조합에 대해 실험한 Repository입니다.
 
-# MC_Dropout_time-series_variance_v3.py 전체 흐름도
+전체적인 간략한 흐름은 다음과 같습니다.
+```
+MC_Dropout_time-series_variance_v3.py에서 y축에 해당하는 AUC 값을 저장하는 csv파일을 만들고, MC_Dropout_scatter_v9.py가 csv를 받아와 y축을 그리고, x축은 내부에서 normal MAE, MSE를 구한다.
+MC_Dropout_time-series_variance_v3.py -> channel_wise_auc_roc_select_max.csv (y축) -> MC_Dropout_scatter_v9.py -> normal MAE, MSE (x축)
+```
+
+
+# MC_Dropout_time-series_variance_v3.py
+
+
+전체 흐름도
 ```
 CSV 데이터 로드 
     │ 
@@ -31,3 +41,7 @@ CSV 데이터 로드
     ▼
 결과를 CSV에 append
 ```
+
+
+# MC_Dropout_scatter_v9.py
+d
