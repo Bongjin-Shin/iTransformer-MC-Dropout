@@ -1,10 +1,10 @@
 # iTransformer-MC-Dropout
 iTransformer + MC Dropout + TSB-AD 조합에 대해 실험한 Repository입니다.
 
-#MC_Dropout_time-series_variance_v3.py 전체 흐름도
-CSV 데이터 로드
-    │
-    ▼
+#MC_Dropout_time-series_variance_v3.py 전체 흐름도 \
+CSV 데이터 로드 \
+    │ \
+    ▼ \
 전처리 (StandardScaler로 정규화)
     │
     ▼
