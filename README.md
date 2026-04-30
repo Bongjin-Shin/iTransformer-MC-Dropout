@@ -44,4 +44,4 @@ CSV 데이터 로드
 
 
 # MC_Dropout_scatter_v9.py
-d
+
