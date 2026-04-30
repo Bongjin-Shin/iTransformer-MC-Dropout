@@ -10,8 +10,7 @@ MC_Dropout_time-series_variance_v3.py → channel_wise_auc_roc_select_max.csv (y
 
 # MC_Dropout_time-series_variance_v3.py
 
-
-전체 흐름도
+- 전체 흐름도
 ```
 CSV 데이터 로드 
     │ 
@@ -44,6 +43,8 @@ CSV 데이터 로드
 
 
 # MC_Dropout_scatter_v9.py
+
+- 전체 흐름도
 ```
 AUC-ROC CSV 로드 (variance_v3.py 산출물)
     │
